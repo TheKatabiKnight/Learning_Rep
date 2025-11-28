@@ -110,9 +110,21 @@
 #     if c.lower() in 'eaiou':
 #         count += 1
 # print(count)
-    
 
-
+# printing asterisks in a piramid shape
+# rows = 5
+# x = 1
+# while x <= rows:
+#     y = 1
+#     while y <= (rows - x):
+#         print(" ", end="")
+#         y += 1
+#     z = 1
+#     while z <= (2*x -1):
+#         print("*", end="")
+#         z += 1
+#     print()
+#     x += 1
     
 
 
