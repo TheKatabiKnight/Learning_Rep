@@ -1,0 +1,31 @@
+String methods (TEXT):
+.lower()	Makes text lowercase	"Hi".lower() → "hi"
+.upper()	Makes text uppercase	"hi".upper() → "HI"
+.strip()	Removes spaces at ends	" hi ".strip() → "hi"
+.split()	Splits text into a list	"a b c".split() → ["a","b","c"]
+.count(x)	Counts occurrences	"banana".count("a") → 3
+
+List methods (COLLECTIONS) :
+.append(x)	Adds item	lst.append(5)
+.pop()	Removes last item	lst.pop()
+.remove(x)	Removes first match	lst.remove(3)
+.count(x)	Counts items	lst.count(2)
+
+Dictionary methods (MAPPINGS) :
+.keys()	Gets all keys	d.keys()
+.values()	Gets all values	d.values()
+.items()	Gets key + value	d.items()
+.get(k)	Safe key access	d.get("age")
+
+Number-related tools (ESSENTIAL) :
+int()	Convert to integer
+float()	Convert to decimal
+abs()	Absolute value
+round(x, 2)	Round numbers
+
+Loop helpers (NOT methods) :
+len()	Loop safely
+range()	Controlled iteration
+break	Stop loop
+continue	Skip step
+
