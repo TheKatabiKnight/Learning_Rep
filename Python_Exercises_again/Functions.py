@@ -136,24 +136,24 @@
 # print(reverse)
 
 #15)
-def no_duplicate(numbers):
-    remove = []
-    x = 0
-    while x < len(numbers):
-       y = 0
-       origin = True
-       while y < x:
+# def no_duplicate(numbers):
+#     remove = []
+#     x = 0
+#     while x < len(numbers):
+#        y = 0
+#        origin = True
+#        while y < x:
             
-            if numbers[x] == numbers[y]:
-               origin = False
-               break
-            y += 1
-       if origin == True:
-            remove.append(numbers[x])
-       x += 1           
-    return remove
-remove_duplicate = no_duplicate([8, 5, 9, 6, 8, 1, 6])
-print(remove_duplicate)
+#             if numbers[x] == numbers[y]:
+#                origin = False
+#                break
+#             y += 1
+#        if origin == True:
+#             remove.append(numbers[x])
+#        x += 1           
+#     return remove
+# remove_duplicate = no_duplicate([8, 5, 9, 6, 8, 1, 6])
+# print(remove_duplicate)
 
 
 
