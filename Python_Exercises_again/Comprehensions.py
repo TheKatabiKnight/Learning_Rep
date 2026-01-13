@@ -65,16 +65,25 @@
 
 
 ########################
-def vowel_map(words):
-    vowels_dict = {}
-    vowels = set('aeiou')
-    for word in words:
-        found_vowels = set(word.lower()).intersection(vowels)
-        if len(found_vowels) > 2:
-            vowels_dict[word] = found_vowels
-    return vowels_dict
-    # return {word: {vowel for vowel in word.lower() if vowel in 'aeiou'}
-    #          for word in words 
-    #          if len({vowel for vowel in word.lower() if vowel in 'aeiou'}) > 2 }
-exercise = vowel_map(["beautiful", "apple", "queue", "python", "education", "mountain"])
-print(exercise)
+# def vowel_map(words):
+#     vowels_dict = {}
+#     vowels = set('aeiou')
+#     for word in words:
+#         found_vowels = set(word.lower()).intersection(vowels)
+#         if len(found_vowels) > 2:
+#             vowels_dict[word] = found_vowels
+#     return vowels_dict
+#     # return {word: {vowel for vowel in word.lower() if vowel in 'aeiou'}
+#     #          for word in words 
+#     #          if len({vowel for vowel in word.lower() if vowel in 'aeiou'}) > 2 }
+# exercise = vowel_map(["beautiful", "apple", "queue", "python", "education", "mountain"])
+# print(exercise)
+
+def test(items):
+    
+        return items[len(items)-1]["weight"]
+        
+    
+    
+test_test = test([{"item": "sword","weight": 150},{"item": "dagger","weight": 1100},{"item": "staff","weight": 2100}])
+print(test_test)

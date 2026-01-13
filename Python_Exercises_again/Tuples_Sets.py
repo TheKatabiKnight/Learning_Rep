@@ -134,7 +134,7 @@
 # print(record)
 
 #13)
-def get_premium_items(inventory):
-    return {item: price*0.9 for item, price in inventory.items() if price > 100}
-exercise = get_premium_items({"Laptop": 1200, "Mouse": 25, "Monitor": 200, "Cable": 10})
-print(exercise)
+# def get_premium_items(inventory):
+#     return {item: price*0.9 for item, price in inventory.items() if price > 100}
+# exercise = get_premium_items({"Laptop": 1200, "Mouse": 25, "Monitor": 200, "Cable": 10})
+# print(exercise)

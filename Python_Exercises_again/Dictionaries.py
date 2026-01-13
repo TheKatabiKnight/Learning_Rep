@@ -1,4 +1,4 @@
-#1)
+8#1)
 # car = {
 #     "brand" : "Mercedes",
 #     "model" : "Class G",
@@ -157,21 +157,21 @@
 # print(char_print)
 
 #MINI CHALLENGE)
-def first_unique_char(word):
-    unique_char = ""
-    char_count = {}
-    for y in range (0, len(word)):
-        if word[y] in char_count:
-            char_count[word[y]] += 1
-        else:
-            char_count[word[y]] = 1
-    for z in word:
-        if char_count[z] < 2:
-            unique_char = z
-            break
-    if unique_char == "":
-        unique_char = None
-    return unique_char
+# def first_unique_char(word):
+#     unique_char = ""
+#     char_count = {}
+#     for y in range (0, len(word)):
+#         if word[y] in char_count:
+#             char_count[word[y]] += 1
+#         else:
+#             char_count[word[y]] = 1
+#     for z in word:
+#         if char_count[z] < 2:
+#             unique_char = z
+#             break
+#     if unique_char == "":
+#         unique_char = None
+#     return unique_char
 
-char_print = first_unique_char("wwoorrd")
-print(char_print)
+# char_print = first_unique_char("wwoorrd")
+# print(char_print)
