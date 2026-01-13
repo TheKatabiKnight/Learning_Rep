@@ -35,7 +35,9 @@ if bosses drops items make it so that gathering a specific set of items combines
 include health potions that are rare to drop.
 max health increase elixirs that are hard to drop and have a use cap.
 same items stack to 10 each.
-if i use up a quest say like an easy quest it should be replaced with another. Do that until i slay the boss as in keep regenrating quests i finish and the rewards should take into consideration the quality of quests i completed to slay the boss and not the quantity.
+if i use up a quest say like an easy quest it should be replaced with another. Do that until i slay the boss as in keep regenerating quests i finish and the rewards should take into consideration the quality of quests i completed to slay the boss and not the quantity.
 make it so that legendary quests increase the drop rate by a percentage higher then main ones, and no increase for easy ones.
 Make it so that every time i successfully complete a quest, it should act as a spell according to its rank.
 inventory slots should only take one item of its kind and stack the rest but only take one slot.
+bosses get increasingly more health according to how deep i am in that python lesson: for example if i am learning something for the first time the boss should get 100hp but if i am diving deeper into the lesson the bosses should keep getting their health boosted so that i would need to finish more quests to kill them.
+as soon as i can make my own game, tell me so and we can get started even if its just a basic one with test first then we can move into an actual one with graphics.
