@@ -57,7 +57,19 @@ class SkillSystem:
     def forget_skill(self, name_with_rank):
         if name_with_rank in self._skills:
             self._skills.remove(name_with_rank)
-
+###Level governance###
+class Hero:
+    def __init__(self, level):
+        self.level = level
+    @property
+    def level(self):
+        return self._level
+    @level.setter
+    def level(self, value):
+        if value < 1:
+            self._level = 1
+        else:
+            self._level = value
 
 
 
