@@ -18,7 +18,7 @@ class CombatEntity:
     def is_alive(self):
         return self._current_hp > 0
     def __str__(self):
-            return f"{self.name}: {self._current_hp}/{self.max_hp} HP"
+            return f"{self.name} : {self._current_hp}/{self.max_hp} HP"
 ###Hero creation governance###
 class BaseHero(ABC):
     @abstractmethod
@@ -28,14 +28,14 @@ class BaseHero(ABC):
     def get_role(self):
         pass
     def introduce(self):
-        return f"I am {self.name}, the {self.get_role()}."
-class Mage(BaseHero):
+        return f"you are {self.name}, the {self.get_role()}."
+class Warrior(BaseHero):
     def __init__(self, name):
         self.name = name
     def unique_ability(self):
-        return "Casts Fireball"
+        return "Casts Slash"
     def get_role(self):
-        return "Mage"
+        return "Warrior"
 ###Skill limit/Aquisition management###
 class SkillSystem:
     def __init__(self, max_slots):
@@ -70,8 +70,18 @@ class Hero:
             self._level = 1
         else:
             self._level = value
-
-
+###Stat governance###
+class Stats:
+    def __init__(self, stat_name):
+        self._stat_name = stat_name
+    @property
+    def stat_name(self):
+        return self._stat_name
+    @stat_name.setter
+    def stat_name(self, value):
+        self._stat_name = max(0, min(value, 100))
+        
+        
 
 
 

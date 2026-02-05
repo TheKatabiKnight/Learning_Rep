@@ -17,6 +17,8 @@ class GoldTransaction():
             print("Gold safe. Transaction aborted.")
         else:
             print("Gold deducted. Transaction finalized.")
+
+
 class AtomicSave():
     def __init__(self, filename):
         self.filename = filename
