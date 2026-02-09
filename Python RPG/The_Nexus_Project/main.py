@@ -1,20 +1,25 @@
-from utils import get_welcome_message
+from utils import get_welcome_message, Training_Grounds
 from config import NexusConfig
-from Entities import Warrior, CombatEntity
-
+from Entities import Warrior, CombatEntity, Stats
+from story import training_part1
+import asyncio
 import persistence
 
 ###Game Start###
 if __name__ == "__main__" :
     print(get_welcome_message())
     print(NexusConfig.format_header(NexusConfig.WORLD_NAME))
-    difficulty = NexusConfig.update_difficulty(input("Please Choose difficulty (Easy/Normal/Hard)"))
-    print(f"{difficulty} difficulty chosen!!")
+    #difficulty for later#
+    # difficulty = NexusConfig.update_difficulty(input("Please Choose difficulty (Easy/Normal/Hard)"))
+    # print(f"{difficulty} difficulty chosen!!")
 
 ###Character Creation###
 if __name__ == "__main__" :
     New_Player = input("Please choose a name for your character! : ")
     character_created = CombatEntity(New_Player, 100, 100)
+    strength = Stats(5)
+    accuracy = Stats(4)
+    constitution = Stats(3)
     print(f"Welcome {New_Player} to {NexusConfig.WORLD_NAME}!")
     
     while True:
@@ -26,9 +31,15 @@ if __name__ == "__main__" :
             case _:
                 print("invalid input! try again")
         
-    print("Find bellow your character status :")
-    print(character_created)
-    print(f"Class : {chosen_class.get_role()}")
+    print(f"character status : \n{character_created} \nClass : {chosen_class.get_role()} \nStats :\nStrength : {strength.stat} \nAccuracy : {accuracy.stat} \nConsitution : {constitution.stat}")
+###Training Grounds###
+if __name__ == "__main__" :
+    Training_Grounds()
+    asyncio.run(training_part1())
+    
+
+
+    
     
 
     

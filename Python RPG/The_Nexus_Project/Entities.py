@@ -51,9 +51,9 @@ class SkillSystem:
                 self._skills.append(skill_des)
                 return "Learned"
             else:
-                return "Failed"
+                return "Slots are full! Forget skill to free up slots"
         else:
-            return "Failed"
+            return "Skill Already Learned!!"
     def forget_skill(self, name_with_rank):
         if name_with_rank in self._skills:
             self._skills.remove(name_with_rank)
@@ -72,15 +72,25 @@ class Hero:
             self._level = value
 ###Stat governance###
 class Stats:
-    def __init__(self, stat_name):
-        self._stat_name = stat_name
+    def __init__(self, stat):
+        self._stat = stat
     @property
-    def stat_name(self):
-        return self._stat_name
-    @stat_name.setter
-    def stat_name(self, value):
-        self._stat_name = max(0, min(value, 100))
-        
+    def stat(self):
+        return self._stat
+    @stat.setter
+    def stat(self, value):
+        self._stat = max(0, min(value, 5))
+    def increase(self, amount):
+        if amount < 3 :
+            self._stat += amount
+            return f"Stat increased"
+        else :
+            return "You only have 2 stat points!!"
+
+
+
+
+
         
 
 
