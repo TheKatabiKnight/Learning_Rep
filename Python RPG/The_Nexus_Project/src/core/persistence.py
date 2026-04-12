@@ -32,3 +32,28 @@ class AtomicSave():
             os.remove(self.filename)
         else:
             print("Save Successful.")
+
+def save_player_state(file_name, player):
+    with AtomicSave(f"{file_name}") as f:
+        f.write(f"{str(player.data.current_hp)}\n")
+        f.write(f"{str(player.x)}\n")
+        f.write(f"{str(player.y)}\n")
+        f.write(f"{str(player.z)}\n")
+
+def load_player_state(file_name):
+    try:
+        with open(f"{file_name}", "r") as f:
+            lines = f.readlines()
+            if len(lines) >= 4:
+                hp = float(lines[0])
+                x = float(lines[1])
+                y = float(lines[2])
+                z = float(lines[3])
+                return {"player_current_hp": hp, "position": (x, y, z)}
+        
+        
+    except :
+        pass
+    
+    return {f"player_current_hp": 100, "position": (0, 1.5, 0)}
+        

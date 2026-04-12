@@ -1,9 +1,9 @@
 from utils import get_welcome_message, Training_Grounds
 from config import NexusConfig
-from Entities import Warrior, CombatEntity, Stats
+from src.entities.Entities import Warrior, CombatEntity, Stats
 from story import training_part1
 import asyncio
-import persistence
+import src.core.persistence as ps
 
 ###Game Start###
 if __name__ == "__main__" :

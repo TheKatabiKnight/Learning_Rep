@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 
 ###Health/Death governance###
 class CombatEntity:
-    def __init__(self, name, max_hp, current_hp):
+    def __init__(self, name, current_hp, max_hp):
         self.name = name
         self.max_hp = max_hp
         self.current_hp = current_hp
@@ -18,7 +18,7 @@ class CombatEntity:
     def is_alive(self):
         return self._current_hp > 0
     def __str__(self):
-            return f"{self.name} : {self._current_hp}/{self.max_hp} HP"
+            return f"{self.name} \n {self._current_hp}/{self.max_hp} "
 ###Hero creation governance###
 class BaseHero(ABC):
     @abstractmethod
