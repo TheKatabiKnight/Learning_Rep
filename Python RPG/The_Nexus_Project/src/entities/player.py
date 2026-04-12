@@ -6,7 +6,7 @@ from src.core.persistence import save_player_state
 
 
 class Player(Entity):
-    def __init__(self, data, player_pos, monster):
+    def __init__(self, data, player_pos, monster, **kwargs):
         super().__init__(
             model='cube',
             color=color.orange,
@@ -47,15 +47,15 @@ class Player(Entity):
         
     def update(self):
         #camera angle
-        target_pos = self.position + Vec3(0, 10, -15)
-        camera.position = lerp(camera.position, target_pos, time.dt * 4)
-        camera.look_at(self)
-        camera.rotation_z = 0
+        # target_pos = self.position + Vec3(0, 10, -15)
+        # camera.position = lerp(camera.position, target_pos, time.dt * 4)
+        # camera.look_at(self)
+        # camera.rotation_z = 0
 
         #hp bar
         p_hp_ratio = self.data.current_hp / self.data.max_hp
         self.p_bar.scale_x = p_hp_ratio
-        if self.is_dead == False:
+        if not self.is_dead:
             self.x += held_keys['d'] * time.dt * self.speed
             self.x -= held_keys['a'] * time.dt * self.speed
             self.z += held_keys['w'] * time.dt * self.speed

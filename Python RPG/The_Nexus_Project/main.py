@@ -1,7 +1,7 @@
-from utils import get_welcome_message, Training_Grounds
+from progression.utils import get_welcome_message, Training_Grounds
 from config import NexusConfig
 from src.entities.Entities import Warrior, CombatEntity, Stats
-from story import training_part1
+from progression.story import training_part1
 import asyncio
 import src.core.persistence as ps
 

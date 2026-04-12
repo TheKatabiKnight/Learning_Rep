@@ -3,14 +3,13 @@ from ursina import *
 
 
 class Monster(Entity):
-    def __init__(self, monster_data, pos, player):
+    def __init__(self, monster_data, pos, player, **kwargs):
         super().__init__(
             model='cube',
             color=color.blue,
             scale=1,
             position=pos,
             collider='box',
-            
         )
         self.player=player
         self.hit_timer = 0
@@ -41,7 +40,7 @@ class Monster(Entity):
     def update(self):
         m_hp_ratio = self.monster_data.current_hp / self.monster_data.max_hp
         self.bar.scale_x = m_hp_ratio
-        if  self.player.is_dead == False:
+        if not self.player.is_dead:
             
             d = distance(self, self.player) #Measure distance between player and Entities
             
@@ -78,7 +77,7 @@ class Monster(Entity):
                 self.player.is_dead = True
         #Monster position return
         self.direction2 = (self.original - self.position).normalized()    
-        if self.player.is_dead == True:
+        if self.player.is_dead:
             if distance(self.position, self.original) > 0.01:
                 self.position += self.direction2 * self.speed * time.dt
                 self.look_at(self.original)

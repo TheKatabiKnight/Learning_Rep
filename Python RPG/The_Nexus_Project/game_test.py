@@ -4,17 +4,12 @@ import random
 from src.core.persistence import load_player_state
 from src.entities.player import Player
 from src.entities.monster import Monster
-
-
+from src.core.world import create_environment
 
 
 app = Ursina()
 
-ground_level = Entity(model='cube', color=color.gold, scale=(20,1,20))
-
-
-
-
+environment = create_environment()
 
 data = load_player_state("save_player_data.txt")
 
@@ -25,11 +20,8 @@ slimes = [
           Monster(CombatEntity("Slime", 60, 60),
           pos=(random.uniform(1, 10), 1.5, random.uniform(1, 10)),
           player=player) for i in range(5)
-          
           ]
 
-
-
-# EditorCamera() #todebug
+EditorCamera() #todebug
 
 app.run()
