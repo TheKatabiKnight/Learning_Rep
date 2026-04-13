@@ -12,6 +12,7 @@ class Player(Entity):
             color=color.orange,
             scale=(1,2,1),
             position=player_pos,
+            **kwargs
             )
         self.monster=monster
         self.is_dead = False
