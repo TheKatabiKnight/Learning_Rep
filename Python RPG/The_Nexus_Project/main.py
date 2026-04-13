@@ -1,9 +1,25 @@
-from progression.utils import get_welcome_message, Training_Grounds
+from progression.utils import get_welcome_message, Training_Grounds, character_creation
 from config import NexusConfig
 from src.entities.Entities import Warrior, CombatEntity, Stats
 from progression.story import training_part1
 import asyncio
-import src.core.persistence as ps
+from ursina import *
+import random
+from src.core.persistence import load_player_state
+from src.entities.player import Player
+from src.entities.monster import Monster
+from src.core.world import create_environment
+
+
+
+
+
+
+
+
+
+
+app = Ursina()
 
 ###Game Start###
 if __name__ == "__main__" :
@@ -15,29 +31,30 @@ if __name__ == "__main__" :
 
 ###Character Creation###
 if __name__ == "__main__" :
-    New_Player = input("Please choose a name for your character! : ")
-    character_created = CombatEntity(New_Player, 100, 100)
-    strength = Stats(5)
-    accuracy = Stats(4)
-    constitution = Stats(3)
-    print(f"Welcome {New_Player} to {NexusConfig.WORLD_NAME}!")
-    
-    while True:
-        Player_Class = input("Please choose your class (Warrior only for now):").lower()
-        match Player_Class:
-            case  "warrior":
-                chosen_class = Warrior(New_Player)
-                break
-            case _:
-                print("invalid input! try again")
-        
-    print(f"character status : \n{character_created} \nClass : {chosen_class.get_role()} \nStats :\nStrength : {strength.stat} \nAccuracy : {accuracy.stat} \nConsitution : {constitution.stat}")
+   character_creation()
 ###Training Grounds###
 if __name__ == "__main__" :
     Training_Grounds()
     asyncio.run(training_part1())
     
 
+
+environment = create_environment()
+
+data = load_player_state("save_player_data.txt")
+
+my_data = CombatEntity("9tiba", data["player_current_hp"], 100)
+player = Player(my_data, data["position"], monster=Monster)
+
+slimes = [
+          Monster(CombatEntity("Slime", 60, 60),
+          pos=(random.uniform(1, 10), 1.5, random.uniform(1, 10)),
+          player=player) for i in range(5)
+          ]
+
+
+
+app.run()
 
     
     

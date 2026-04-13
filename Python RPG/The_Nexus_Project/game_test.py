@@ -18,7 +18,7 @@ player = Player(my_data, data["position"], monster=Monster)
 
 slimes = [
           Monster(CombatEntity("Slime", 60, 60),
-          pos=(random.uniform(1, 10), 1.5, random.uniform(1, 10)),
+          pos=(random.uniform(1, 9), 1.5, random.uniform(1, 9)),
           player=player) for i in range(5)
           ]
 

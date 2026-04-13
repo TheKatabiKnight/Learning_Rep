@@ -56,10 +56,16 @@ class Player(Entity):
         p_hp_ratio = self.data.current_hp / self.data.max_hp
         self.p_bar.scale_x = p_hp_ratio
         if not self.is_dead:
-            self.x += held_keys['d'] * time.dt * self.speed
-            self.x -= held_keys['a'] * time.dt * self.speed
-            self.z += held_keys['w'] * time.dt * self.speed
-            self.z -= held_keys['s'] * time.dt * self.speed
+            dx = held_keys['d'] - held_keys['a']
+            dz = held_keys['w'] - held_keys['s']
+            step = self.speed * time.dt
+            ray_origin = self.position + Vec3(0, 0.5, 0)
+            hit_info_X = raycast(ray_origin, Vec3(dx, 0, 0), step+0.5, ignore=(self,))
+            if dx != 0 and not hit_info_X.hit:
+                self.x += dx * step
+            hit_info_Z = raycast(ray_origin, Vec3(0, 0, dz), step+0.5, ignore=(self,))
+            if dz != 0 and not hit_info_Z.hit:
+                self.z += dz * step  
 
         if self.data.current_hp <= 0:
             self.color = color.black
